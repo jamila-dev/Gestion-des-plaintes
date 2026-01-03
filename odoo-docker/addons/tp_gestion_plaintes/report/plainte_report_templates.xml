@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_plainte_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Détails de la Plainte : <span t-field="o.name"/></h2>
+                        <div class="row mt32 mb32">
+                            <div class="col-3">
+                                <strong>Employé:</strong>
+                                <p t-field="o.employee_name"/>
+                            </div>
+                            <div class="col-3">
+                                <strong>Date:</strong>
+                                <p t-field="o.date_plainte"/>
+                            </div>
+                            <div class="col-3">
+                                <strong>Statut:</strong>
+                                <p t-field="o.state"/>
+                            </div>
+                        </div>
+                        <h3>Description</h3>
+                        <p t-field="o.description"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

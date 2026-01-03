@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_tp_plainte" model="ir.actions.act_window">
+        <field name="name">Plaintes</field>
+        <field name="res_model">tp.plainte</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_tp_plainte_root" name="Gestion des Plaintes" sequence="20"/>
+    <menuitem id="menu_tp_plainte" name="Plaintes" parent="menu_tp_plainte_root" action="action_tp_plainte" sequence="10"/>
+
+    <record id="view_tp_plainte_tree" model="ir.ui.view">
+        <field name="name">tp.plainte.tree</field>
+        <field name="model">tp.plainte</field>
+        <field name="arch" type="xml">
+            <tree string="Liste des Plaintes">
+                <field name="name"/>
+                <field name="employee_name"/>
+                <field name="date_plainte"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_tp_plainte_form" model="ir.ui.view">
+        <field name="name">tp.plainte.form</field>
+        <field name="model">tp.plainte</field>
+        <field name="arch" type="xml">
+            <form string="Plainte">
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="employee_name"/>
+                        <field name="date_plainte"/>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

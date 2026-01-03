@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_plainte" model="ir.actions.report">
+        <field name="name">Rapport de Plainte</field>
+        <field name="model">tp.plainte</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">tp_gestion_plaintes.report_plainte_template</field>
+        <field name="report_file">tp_gestion_plaintes.report_plainte_template</field>
+        <field name="binding_model_id" ref="model_tp_plainte"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+# Odoo data
+odoo-docker/odoo-web-data/
+odoo-docker/sessions/
+odoo-docker/filestore/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS files
+.DS_Store
+Thumbs.db
